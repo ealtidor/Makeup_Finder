@@ -47,12 +47,9 @@ http://makeup-api.herokuapp.com/api/v1/products.json
 WIREFRAMES
 https://drive.google.com/drive/folders/1McdQeu7c2wILJspbphfgdSlknZIaknEZ?usp=sharing
 
-### MVP/PostMVP
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
+### MVP/PostMVP  
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
 - Connect external api to the webpage
 - Render a list of product types by category
@@ -61,7 +58,6 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - Allow user to search for various products
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
 - Add second API
 - Allow user to create a profile
@@ -70,10 +66,6 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - Identify coupons for items listed in user's favorites
 
 ## Project Schedule
-
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
 |  Day | Deliverable | Status
 |---|---| ---|
@@ -91,10 +83,6 @@ You are **responsible** for scheduling time with your squad to seek approval for
 https://drive.google.com/drive/folders/1McdQeu7c2wILJspbphfgdSlknZIaknEZ?usp=sharing
 
 ## Timeframes
-
-Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
