@@ -10,8 +10,9 @@ This application will serve as a guide to users on which type of cosmetic produc
 ## API and Data Sample
 http://makeup-api.herokuapp.com/api/v1/products.json
 
+
 ```
- "id": 1048,
+"id": 1048,
         "brand": "colourpop",
         "name": "Lippie Pencil",
         "price": "5.0",
@@ -39,9 +40,7 @@ http://makeup-api.herokuapp.com/api/v1/products.json
             },
             {
                 "hex_value": "#A36B5E",
-                "colour_name": "951 Pencil"
-    ```
-
+                "colour_name": "951 Pencil
 
 ## Wireframes
 
