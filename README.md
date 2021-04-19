@@ -11,7 +11,6 @@ This application will serve as a guide to users on which type of cosmetic produc
 http://makeup-api.herokuapp.com/api/v1/products.json
 
 
-```
 "id": 1048,
         "brand": "colourpop",
         "name": "Lippie Pencil",
