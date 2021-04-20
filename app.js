@@ -2,8 +2,14 @@
 
 // Create dynamic drop down menu from first request
 
-const getOptions = async() => {
-  const url = 'http://makeup-api.herokuapp.com/api/v1/products.json'
+const baseUrl = 'http://makeup-api.herokuapp.com/api/v1/products.json'
+const eyeCat = document.querySelector('.eye-dropdown')
+const lipCat = document.querySelector('.lip-dropdown')
+const faceCat = document.querySelector('.face-dropdown')
+
+const getOptions = async () => {
+  // const url = 'http://makeup-api.herokuapp.com/api/v1/products.json'
+  const url = "http://makeup-api.herokuapp.com/api/v1/products.json?product_type"
 
   try {
     const response = await axios.get(url)
