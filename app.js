@@ -3,7 +3,6 @@
 // Create dynamic drop down menu from first request
 
 const baseUrl = 'http://makeup-api.herokuapp.com/api/v1/products.json'
-const eyeCat = document.querySelector('.eye-dropdown')
 const lipCat = document.querySelector('.lip-dropdown')
 const faceCat = document.querySelector('.face-dropdown')
 
@@ -14,6 +13,9 @@ const getOptions = async () => {
   try {
     const response = await axios.get(url)
     console.log(response.data)
+    let eyeList = Object.keys(response.data)
+    // console.log(eyeList)
+    eyeOptions(eyeList)
 }
   catch (error) {
     console.error(error)
@@ -27,7 +29,19 @@ getOptions()
 // Create the form option menu/tags
 
 
+function eyeOptions(list) {
+  // console.log(list)
+  const eyeCat = document.querySelector('.eye-dropdown')
+  list.forEach((product) => {
+    console.log(product)
+    const eyeProduct = document.createElement('option')
+    eyeProduct.textContent = product
+    eyeProduct.value = product
+    eyeCat.append(eyeProduct)
+  })
 
+
+}
 
 
 
