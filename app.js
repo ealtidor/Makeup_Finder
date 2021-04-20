@@ -25,9 +25,9 @@ const getOptions = async () => {
         faceProd.push(product)
       }
 })
-    console.log("eye", eyeProd)
-    console.log("lip", lipProd)
-    console.log("face",faceProd)
+    // console.log("eye", eyeProd)
+    // console.log("lip", lipProd)
+    // console.log("face",faceProd)
   
     eyeOptions(eyeProd)
 }
@@ -73,6 +73,14 @@ function eyeOptions(list) {
 
 // Select tag value from drop down menu
 
+function getEyeValue(e) {
+  e.preventDefault()
+
+  const eyeOpValue = document.querySelector('#select-eye').value
+  // console.log(eyeOpValue)
+  // getBreedImage(optionValue)
+  return eyeOpValue
+}
 
 
 
