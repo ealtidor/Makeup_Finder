@@ -56,7 +56,7 @@ https://drive.google.com/drive/folders/1McdQeu7c2wILJspbphfgdSlknZIaknEZ?usp=sha
 - Render a list of product types by category
 - Allow user to choose favorites 
 - Allow user to remove items from favorites
-- Allow user to search for various products
+
 
 #### PostMVP  
 
@@ -65,6 +65,7 @@ https://drive.google.com/drive/folders/1McdQeu7c2wILJspbphfgdSlknZIaknEZ?usp=sha
 - Allow user to get a quick view of the product before fully clicking on the item to view product detail
 - Provide user a list of where the items are available for purchase
 - Identify coupons for items listed in user's favorites
+- Allow user to search for various products
 
 ## Project Schedule
 
