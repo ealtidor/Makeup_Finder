@@ -84,16 +84,40 @@ const eyeForm = document.querySelector('#select-eye')
 eyeForm.addEventListener('change', getEyeValue)
 
 
-// Retrieve Product Image
+// Create Product Card
 const renderList = (data) => {
   data.forEach((l) => {
-    console.log(l.image_link)
-    const eyeProdImg = document.createElement('img')
-    eyeProdImg.className = 'eye-image'
-    eyeProdImg.src = l.image_link
-    document.querySelector(".product-card").append(eyeProdImg) 
-  })
+    if (l.image_link !== 'N/A') {
 
+    // creating elements
+    const eyeProdImg = document.createElement('img')
+    const eyeBrand = document.createElement('h4')
+    const eyeProdName = document.createElement('p')
+    const eyeProdPrice = document.createElement('p')
+    // const eyeProdColor = document.createElement('p')
+
+    // creating css names
+    eyeProdImg.className = 'eye-image'
+    eyeBrand.className = 'eye-brand'
+    eyeProdName.className = 'eye-name'
+    eyeProdPrice.className = 'eye-price'
+    // eyeProdColor.className = 'eye-color'
+
+// adding values to new elements
+    eyeProdImg.src = l.image_link
+    eyeBrand.textContent = l.brand
+    eyeProdName.textContent = l.name
+    eyeProdPrice.textContent = `$ ${l.price}`
+  
+// append elements
+    document.querySelector(".product-card").append(eyeProdImg) 
+    document.querySelector(".product-card").append(eyeBrand)
+    document.querySelector(".product-card").append(eyeProdName)
+    document.querySelector(".product-card").append(eyeProdPrice)
+
+    }
+  })
+console.log(renderList)
 }
 
 
