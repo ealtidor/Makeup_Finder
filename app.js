@@ -67,10 +67,6 @@ function eyeOptions(list) {
 
 
 
-
-
-
-
 // Select tag value from drop down menu
 
 function getEyeValue(e) {
@@ -78,7 +74,6 @@ function getEyeValue(e) {
 
   const eyeOpValue = document.querySelector('#select-eye').value
   // console.log(eyeOpValue)
-  // getBreedImage(optionValue)
   return eyeOpValue
 }
 
@@ -86,22 +81,18 @@ function getEyeValue(e) {
 
 
 
+// Form Eventhandler 
 
-
-// Eventhandler for the Form
-
-
-
-
-
-
-
+const eyeForm = document.querySelector('.eye-form')
+eyeForm.addEventListener('submit', getEyeValue)
 
 
 // Create dynamic image tag and append to DOM
 
 
-
+async function getEyeImage() {
+  
+}
 
 
 
