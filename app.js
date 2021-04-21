@@ -87,7 +87,7 @@ eyeForm.addEventListener('change', getEyeValue)
 // Create Product Card
 const renderList = (data) => {
   data.forEach((l) => {
-    if (l.image_link !== 'N/A') {
+    if (l.image_link !== 'undefined') {
 
     // creating elements
     const eyeProdImg = document.createElement('img')
@@ -117,13 +117,18 @@ const renderList = (data) => {
 
     }
   })
-console.log(renderList)
+// console.log(renderList)
 }
 
 
-// Create dynamic image tag and append to DOM
 
 
 
 // Remove previous product selection
 
+function removeImage() {
+  const removeImageDiv = document.querySelector('.product-card')
+  while (removeImageDiv.lastChild) {
+    removeImageDiv.removeChild(removeImageDiv.lastChild)
+  }
+}
