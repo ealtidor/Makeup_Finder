@@ -2,20 +2,19 @@
 
 // Create dynamic drop down menu from first request
 
-const baseUrl = 'http://makeup-api.herokuapp.com/api/v1/products.json'
-const lipCat = document.querySelector('.lip-dropdown')
-const faceCat = document.querySelector('.face-dropdown')
+
+let eyeProd = []
+let lipProd = []
+let faceProd =[]
 
 const getOptions = async () => {
   const url = "http://makeup-api.herokuapp.com/api/v1/products.json?product_type"
-
   try {
     const response = await axios.get(url)
     const conArr = response.data.slice(0, 465)
+
     console.log(conArr)
-    let eyeProd = []
-    let lipProd = []
-    let faceProd =[]
+   
     conArr.forEach((product) => {
       if (product.product_type === "eyebrow" || product.product_type === "eyeliner" || product.product_type === "eyeshadow" || product.product_type === "mascara" ) {
         eyeProd.push(product)
@@ -25,9 +24,6 @@ const getOptions = async () => {
         faceProd.push(product)
       }
 })
-    // console.log("eye", eyeProd)
-    // console.log("lip", lipProd)
-    // console.log("face",faceProd)
   
     eyeOptions(eyeProd)
 }
@@ -48,9 +44,9 @@ function eyeOptions(list) {
   const eyeList = list.map((product) => {
   return product.product_type
   })
-  console.log(eyeList)
+  // console.log(eyeList)
   const uniqueEye = eyeList.filter((x, i, a) => a.indexOf(x) === i)
-  console.log(uniqueEye)
+  // console.log(uniqueEye)
   const eyeCat = document.querySelector('#select-eye')
  uniqueEye.forEach((product) => {
     const eyeProduct = document.createElement('option')
@@ -71,10 +67,11 @@ function eyeOptions(list) {
 
 function getEyeValue(e) {
   e.preventDefault()
-
   const eyeOpValue = document.querySelector('#select-eye').value
-  // console.log(eyeOpValue)
-  return eyeOpValue
+  // console.log(eyeProd)
+  // product_type: "eyeliner"
+  const selectedResultList = eyeProd.filter((val) => val.product_type === eyeOpValue )
+  renderList(selectedResultList)
 }
 
 
@@ -83,19 +80,26 @@ function getEyeValue(e) {
 
 // Form Eventhandler 
 
-const eyeForm = document.querySelector('.eye-form')
-eyeForm.addEventListener('submit', getEyeValue)
+const eyeForm = document.querySelector('#select-eye')
+eyeForm.addEventListener('change', getEyeValue)
+
+
+// Retrieve Product Image
+const renderList = (data) => {
+  data.forEach((l) => {
+    console.log(l.image_link)
+    const eyeProdImg = document.createElement('img')
+    eyeProdImg.className = 'eye-image'
+    eyeProdImg.src = l.image_link
+    document.querySelector(".product-card").append(eyeProdImg) 
+  })
+
+}
 
 
 // Create dynamic image tag and append to DOM
 
 
-async function getEyeImage() {
-  
-}
-
-
-
-
 
 // Remove previous product selection
+
