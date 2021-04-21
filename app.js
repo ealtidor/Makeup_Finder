@@ -115,7 +115,7 @@ function getEyeValue(e) {
   // product_type: "eyeliner"
   const selectedResultList = eyeProd.filter((val) => val.product_type === eyeOpValue)
   removeProduct()
-  renderList(selectedResultList)
+  eyeRenderList(selectedResultList)
 }
 
 
@@ -126,7 +126,7 @@ function getLipValue(e) {
   // product_type: "eyeliner"
   const selectedResultList = lipProd.filter((val) => val.product_type === lipOpValue)
   removeProduct()
-  renderList(selectedResultList)
+  lipRenderList(selectedResultList)
 }
 
 
@@ -155,9 +155,17 @@ function getFaceValue(e) {
 const eyeForm = document.querySelector('#select-eye')
 eyeForm.addEventListener('change', getEyeValue)
 
+const lipForm = document.querySelector('#select-lip')
+lipForm.addEventListener('change', getLipValue)
+
+const faceForm = document.querySelector('#select-face')
+faceForm.addEventListener('change', getFaceValue)
+
+
+
 
 // Create Product Card
-const renderList = (data) => {
+const eyeRenderList = (data) => {
   data.forEach((l) => {
     if (l.image_link !== 'N/A') {
       const prodCard = document.createElement('div')
@@ -193,8 +201,51 @@ const renderList = (data) => {
   
     }
   })
-// console.log(renderList)
 }
+
+
+
+const lipRenderList = (data) => {
+  data.forEach((l) => {
+    if (l.image_link !== 'N/A') {
+      const prodCard = document.createElement('div')
+      prodCard.className = 'product-card'
+
+    // creating elements
+    const lipProdImg = document.createElement('img')
+    const lipBrand = document.createElement('h4')
+    const lipProdName = document.createElement('p')
+    const lipProdPrice = document.createElement('p')
+    // const eyeProdColor = document.createElement('p')
+
+    // creating css names
+    lipProdImg.className = 'lip-image'
+    lipBrand.className = 'lip-brand'
+    lipProdName.className = 'lip-name'
+    lipProdPrice.className = 'lip-price'
+    // eyeProdColor.className = 'eye-color'
+
+// adding values to new elements
+    lipProdImg.src = l.image_link
+    lipBrand.textContent = l.brand
+    lipProdName.textContent = l.name
+    lipProdPrice.textContent = `$ ${l.price}`
+  
+// append elements
+      prodCard.appendChild(lipProdImg)
+      prodCard.appendChild(lipBrand)
+      prodCard.appendChild(lipProdName)
+      prodCard.appendChild(lipProdPrice)
+      
+    document.querySelector(".product-container").append(prodCard) 
+  
+    }
+  })
+}
+
+
+
+
 
 
 
