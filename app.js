@@ -26,6 +26,8 @@ const getOptions = async () => {
 })
   
     eyeOptions(eyeProd)
+    lipOptions(lipProd)
+    faceOptions(faceProd)
 }
   catch (error) {
     console.error(error)
@@ -61,6 +63,47 @@ function eyeOptions(list) {
 
 
 
+function lipOptions(list) {
+  
+  const lipList = list.map((product) => {
+  return product.product_type
+  })
+  // console.log(eyeList)
+  const uniqueLip = lipList.filter((x, i, a) => a.indexOf(x) === i)
+  // console.log(uniqueEye)
+  const lipCat = document.querySelector('#select-lip')
+ uniqueLip.forEach((product) => {
+    const lipProduct = document.createElement('option')
+    lipProduct.innerText= product
+    lipProduct.value = product
+    lipCat.append(lipProduct)
+
+  })
+  
+
+}
+
+function faceOptions(list) {
+  
+  const faceList = list.map((product) => {
+  return product.product_type
+  })
+  // console.log(eyeList)
+  const uniqueFace = faceList.filter((x, i, a) => a.indexOf(x) === i)
+  // console.log(uniqueEye)
+  const faceCat = document.querySelector('#select-face')
+ uniqueFace.forEach((product) => {
+    const faceProduct = document.createElement('option')
+    faceProduct.innerText= product
+    faceProduct.value = product
+    faceCat.append(faceProduct)
+
+  })
+  
+
+}
+
+
 
 
 // Select tag value from drop down menu
@@ -74,6 +117,34 @@ function getEyeValue(e) {
   removeProduct()
   renderList(selectedResultList)
 }
+
+
+function getLipValue(e) {
+  e.preventDefault()
+  const lipOpValue = document.querySelector('#select-lip').value
+  // console.log(eyeProd)
+  // product_type: "eyeliner"
+  const selectedResultList = lipProd.filter((val) => val.product_type === lipOpValue)
+  removeProduct()
+  renderList(selectedResultList)
+}
+
+
+function getFaceValue(e) {
+  e.preventDefault()
+  const faceOpValue = document.querySelector('#select-face').value
+  // console.log(eyeProd)
+  // product_type: "eyeliner"
+  const selectedResultList = faceProd.filter((val) => val.product_type === faceOpValue)
+  removeProduct()
+  renderList(selectedResultList)
+}
+
+
+
+
+
+
 
 
 
