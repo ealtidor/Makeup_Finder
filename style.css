@@ -4,9 +4,8 @@
   font-family: 'Playfair Display', serif;
 }
 
-.nav-heading {
-  display: flex
-  justi;
+nav {
+  padding: 20px
 }
 
 .sub-header {
@@ -16,6 +15,28 @@
   justify-content: space-between;
 }
 
-a.link {
+a {
   color: white;
+  padding: 10px 50px 10px 50px;
+}
+
+.favorites {
+  display: flex;
+  align-self: center;
+}
+
+h1 {
+  margin: 10px;
+}
+
+input {
+  margin: 5px;
+}
+
+.main-banner{
+  width: 100%;
+  height: 300px;
+  box-sizing: inherit;
+  object-fit: cover;
+  
 }
