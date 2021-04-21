@@ -70,7 +70,8 @@ function getEyeValue(e) {
   const eyeOpValue = document.querySelector('#select-eye').value
   // console.log(eyeProd)
   // product_type: "eyeliner"
-  const selectedResultList = eyeProd.filter((val) => val.product_type === eyeOpValue )
+  const selectedResultList = eyeProd.filter((val) => val.product_type === eyeOpValue)
+  removeProduct()
   renderList(selectedResultList)
 }
 
@@ -87,7 +88,9 @@ eyeForm.addEventListener('change', getEyeValue)
 // Create Product Card
 const renderList = (data) => {
   data.forEach((l) => {
-    if (l.image_link !== 'undefined') {
+    if (l.image_link !== 'N/A') {
+      const prodCard = document.createElement('div')
+      prodCard.className = 'product-card'
 
     // creating elements
     const eyeProdImg = document.createElement('img')
@@ -110,11 +113,13 @@ const renderList = (data) => {
     eyeProdPrice.textContent = `$ ${l.price}`
   
 // append elements
-    document.querySelector(".product-card").append(eyeProdImg) 
-    document.querySelector(".product-card").append(eyeBrand)
-    document.querySelector(".product-card").append(eyeProdName)
-    document.querySelector(".product-card").append(eyeProdPrice)
-
+      prodCard.appendChild(eyeProdImg)
+      prodCard.appendChild(eyeBrand)
+      prodCard.appendChild(eyeProdName)
+      prodCard.appendChild(eyeProdPrice)
+      
+    document.querySelector(".product-container").append(prodCard) 
+  
     }
   })
 // console.log(renderList)
@@ -126,9 +131,9 @@ const renderList = (data) => {
 
 // Remove previous product selection
 
-function removeImage() {
-  const removeImageDiv = document.querySelector('.product-card')
-  while (removeImageDiv.lastChild) {
-    removeImageDiv.removeChild(removeImageDiv.lastChild)
+function removeProduct() {
+  const removeProdDiv = document.querySelector('.product-container')
+  while (removeProdDiv.lastChild) {
+    removeProdDiv.removeChild(removeProdDiv.lastChild)
   }
 }
