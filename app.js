@@ -137,7 +137,7 @@ function getFaceValue(e) {
   // product_type: "eyeliner"
   const selectedResultList = faceProd.filter((val) => val.product_type === faceOpValue)
   removeProduct()
-  renderList(selectedResultList)
+  faceRenderList(selectedResultList)
 }
 
 
@@ -243,6 +243,45 @@ const lipRenderList = (data) => {
   })
 }
 
+
+
+const faceRenderList = (data) => {
+  data.forEach((l) => {
+    if (l.image_link !== 'N/A') {
+      const prodCard = document.createElement('div')
+      prodCard.className = 'product-card'
+
+    // creating elements
+    const faceProdImg = document.createElement('img')
+    const faceBrand = document.createElement('h4')
+    const faceProdName = document.createElement('p')
+    const faceProdPrice = document.createElement('p')
+    // const eyeProdColor = document.createElement('p')
+
+    // creating css names
+    faceProdImg.className = 'face-image'
+    faceBrand.className = 'face-brand'
+    faceProdName.className = 'face-name'
+    faceProdPrice.className = 'face-price'
+    // eyeProdColor.className = 'eye-color'
+
+// adding values to new elements
+    faceProdImg.src = l.image_link
+    faceBrand.textContent = l.brand
+    faceProdName.textContent = l.name
+    faceProdPrice.textContent = `$ ${l.price}`
+  
+// append elements
+      prodCard.appendChild(faceProdImg)
+      prodCard.appendChild(faceBrand)
+      prodCard.appendChild(faceProdName)
+      prodCard.appendChild(faceProdPrice)
+      
+    document.querySelector(".product-container").append(prodCard) 
+  
+    }
+  })
+}
 
 
 
