@@ -21,6 +21,9 @@ a {
   color: white;
   padding: 10px 50px 10px 50px;
 }
+#nav-heading{
+  padding: 1rem;
+}
 
 .favorites {
   display: flex;
@@ -116,11 +119,14 @@ p{
    border: 0.1rem solid lightgray;
    margin: 1rem;
  }
-.icon{
-  position: relative
+ .icon{
+  display: none;
 }
-
-@media only screen and (max-width: 660px) {
+ @media only screen and (max-width: 660px) {
+   .icon{
+     position: relative;
+     display: block;
+   }
  .product-grouping{
 
   width: 33.333%;
@@ -143,3 +149,8 @@ p{
 
   }
 }
+/* @media only screen and (max-width: 419px){
+a {
+  padding: 2rem 3rem 2rem 3rem;
+}
+} */
