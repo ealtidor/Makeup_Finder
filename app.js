@@ -1,21 +1,23 @@
 // http://makeup-api.herokuapp.com/api/v1/products.json
 
-// Create dynamic drop down menu from first request
-
 // Search feature
-let conArr = []
+let conArr = null;
 
-const searchProduct = document.getElementById('search-product')
+const searchProduct = document.getElementById('search')
 searchProduct.addEventListener('submit', (e) => {
-  const searchString = (e.target.value)
-  const filteredProducts = conArr.filter(product => {
-    return product.product_type.includes(searchString) || product.brand.includes(searchString) || product.name.includes(searchString)
+  e.preventDefault()
+  const searchString = document.querySelector('#search-product').value
+
+  const filteredProducts = conArr && conArr.filter(product => {
+    return product.product_type?.includes(searchString) || product.brand?.includes(searchString) || product.name?.includes(searchString)
   })
-  console.log(filteredProducts)
+  eyeRenderList(filteredProducts)
+  lipRenderList(filteredProducts)
+  faceRenderList(filteredProducts)
 })
 
 const getProduct = document.querySelector('.search-btn')
-getProduct.addEventListener('submit', searchProduct)
+getProduct.addEventListener('onclick', searchProduct)
 
 // Retrieving API Data
 
@@ -27,9 +29,9 @@ const getOptions = async () => {
   const url = "http://makeup-api.herokuapp.com/api/v1/products.json?product_type"
   try {
     const response = await axios.get(url)
-    conArr = response.data.slice(0, 465)
+    conArr = [...response.data]
 
-    // console.log(conArr)
+ 
    
     conArr.forEach((product) => {
       if (product.product_type === "eyebrow" || product.product_type === "eyeliner" || product.product_type === "eyeshadow" || product.product_type === "mascara" ) {
@@ -308,14 +310,3 @@ function trimSentence(string) {
   }
 }
 
-// Navigation Hamburger
-
-// function hamNav() {
-//   getLinks = document.getElementById('nav-heading');
-//   if (getLinks.style.display === "block") {
-//     getLinks.style.display = "none";
-//   } else {
-//     getLinks.style.display ="block"
-//   }
-// }
-function hamNav()
