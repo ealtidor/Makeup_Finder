@@ -11,6 +11,7 @@ searchProduct.addEventListener('submit', (e) => {
   const filteredProducts = conArr && conArr.filter(product => {
     return product.product_type?.includes(searchString) || product.brand?.includes(searchString) || product.name?.includes(searchString)
   })
+  removeProduct()
   eyeRenderList(filteredProducts)
   lipRenderList(filteredProducts)
   faceRenderList(filteredProducts)
