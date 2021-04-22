@@ -40,3 +40,74 @@ input {
   object-fit: cover;
   
 }
+
+h2 {
+  text-align: center;
+}
+
+.product-grouping {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer{
+  display: flex;
+  align-items: flex-end;
+  background-color: black;
+  margin: 5px;
+}
+
+p{
+  color: mistyrose;
+  display: flex;
+  align-items: flex-end;
+  margin: 10px;
+}
+
+#select-eye,
+#select-lip,
+#select-face{
+  background-color: mistyrose;
+  color:black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 200px
+}
+
+.eye-image,
+.lip-image,
+.face-image{
+  height: 150px;
+  padding: 20px;
+  width: 121px;
+  object-fit: cover;
+ }
+
+ .eye-name,
+ .lip-name,
+ .face-name {
+   color: black;
+ }
+
+ .eye-price,
+ .lip-price,
+ .face-price {
+   color: black;
+ }
+
+ .product-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 30px;
+ }
+
+ .product-card{
+   padding: 20px;
+ }
+
+
+

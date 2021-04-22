@@ -111,8 +111,6 @@ function faceOptions(list) {
 function getEyeValue(e) {
   e.preventDefault()
   const eyeOpValue = document.querySelector('#select-eye').value
-  // console.log(eyeProd)
-  // product_type: "eyeliner"
   const selectedResultList = eyeProd.filter((val) => val.product_type === eyeOpValue)
   removeProduct()
   eyeRenderList(selectedResultList)
@@ -122,8 +120,6 @@ function getEyeValue(e) {
 function getLipValue(e) {
   e.preventDefault()
   const lipOpValue = document.querySelector('#select-lip').value
-  // console.log(eyeProd)
-  // product_type: "eyeliner"
   const selectedResultList = lipProd.filter((val) => val.product_type === lipOpValue)
   removeProduct()
   lipRenderList(selectedResultList)
@@ -133,19 +129,10 @@ function getLipValue(e) {
 function getFaceValue(e) {
   e.preventDefault()
   const faceOpValue = document.querySelector('#select-face').value
-  // console.log(eyeProd)
-  // product_type: "eyeliner"
   const selectedResultList = faceProd.filter((val) => val.product_type === faceOpValue)
   removeProduct()
   faceRenderList(selectedResultList)
 }
-
-
-
-
-
-
-
 
 
 
@@ -188,7 +175,7 @@ const eyeRenderList = (data) => {
 // adding values to new elements
     eyeProdImg.src = l.image_link
     eyeBrand.textContent = l.brand
-    eyeProdName.textContent = l.name
+    eyeProdName.textContent = trimSentence(l.name)
     eyeProdPrice.textContent = `$ ${l.price}`
   
 // append elements
@@ -228,7 +215,7 @@ const lipRenderList = (data) => {
 // adding values to new elements
     lipProdImg.src = l.image_link
     lipBrand.textContent = l.brand
-    lipProdName.textContent = l.name
+    lipProdName.textContent = trimSentence(l.name)
     lipProdPrice.textContent = `$ ${l.price}`
   
 // append elements
@@ -268,7 +255,7 @@ const faceRenderList = (data) => {
 // adding values to new elements
     faceProdImg.src = l.image_link
     faceBrand.textContent = l.brand
-    faceProdName.textContent = l.name
+    faceProdName.textContent = trimSentence(l.name)
     faceProdPrice.textContent = `$ ${l.price}`
   
 // append elements
@@ -285,16 +272,22 @@ const faceRenderList = (data) => {
 
 
 
-
-
-
-
-
 // Remove previous product selection
 
 function removeProduct() {
   const removeProdDiv = document.querySelector('.product-container')
   while (removeProdDiv.lastChild) {
     removeProdDiv.removeChild(removeProdDiv.lastChild)
+  }
+}
+
+
+
+// Trim Sentence function for product name
+function trimSentence(string) {
+  if (string.length > 30) {
+    return `${string.substring(0, 20)}...`
+  } else {
+    return string
   }
 }
