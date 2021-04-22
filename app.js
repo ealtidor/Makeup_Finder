@@ -1,6 +1,8 @@
 // http://makeup-api.herokuapp.com/api/v1/products.json
 
 // Search feature
+// Referenced: https://www.jamesqquick.com/blog/build-a-javascript-search-bar
+
 let conArr = null;
 
 const searchProduct = document.getElementById('search')
@@ -13,8 +15,6 @@ searchProduct.addEventListener('submit', (e) => {
   })
   removeProduct()
   eyeRenderList(filteredProducts)
-  lipRenderList(filteredProducts)
-  faceRenderList(filteredProducts)
 })
 
 const getProduct = document.querySelector('.search-btn')
@@ -32,15 +32,18 @@ const getOptions = async () => {
     const response = await axios.get(url)
     conArr = [...response.data]
 
- 
+//  Pulls in product type value
    
     conArr.forEach((product) => {
       if (product.product_type === "eyebrow" || product.product_type === "eyeliner" || product.product_type === "eyeshadow" || product.product_type === "mascara" ) {
         eyeProd.push(product)
       } else if (product.product_type === "lip_liner" || product.product_type === "lipstick" ) {
         lipProd.push(product)
-      } else {
+      } else if (product.product_type === "bronzer" || product.product_type === "blush" || product.product_type === "foundation") {
         faceProd.push(product)
+      }
+      else {
+        delete product.product_type
       }
 })
   
