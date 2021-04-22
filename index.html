@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>The Perfect Look</title>
 </head>
 
@@ -20,20 +21,29 @@
       <h1>THE PERFECT LOOK</h1>
     </div>
     <div class="sub-header">
+      <a href="javascript:void(0);" class="icon" onclick="hamNav()">
+        <i class="fa fa-bars"></i>
+      </a>
       <div class="favorites">
         <a href="#favorites">FAVORITES</a>
       </div>
-      <nav class="nav-heading">
+      <div id="nav-heading">
         <a href="#eye">EYE</a>
         <a href="#lip">LIP</a>
         <a href="#face">FACE</a>
-      </nav>
-      <form class="search">
-        <input type="text" placeholder="SEARCH">
-        <button type="submit"><i class="fa fa-search"></i></button>
+      </div>
+    
+      <form id="search">
+        <input type="text"
+        name="searchProduct"
+        id="search-product"
+        placeholder="SEARCH">
+        <button 
+        class="search-btn"
+        type="submit"><i class="fa fa-search"></i>
+        </button>
       </form>
     </div>
-
   </header>
   <main class="main-container">
     <div class="img-banner">
@@ -77,6 +87,17 @@
   <footer>
     <p> © THE PERFECT LOOK, 2021</p>
   </footer>
+<script>
+  function hamNav() {
+  getLinks = document.getElementById('nav-heading');
+  if (getLinks.style.display === "block") {
+    getLinks.style.display = "none";
+  } else {
+    getLinks.style.display ="block"
+  }
+}
+</script>
+
 </body>
 
 </html>

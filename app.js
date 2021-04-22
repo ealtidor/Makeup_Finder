@@ -2,6 +2,22 @@
 
 // Create dynamic drop down menu from first request
 
+// Search feature
+let conArr = []
+
+const searchProduct = document.getElementById('search-product')
+searchProduct.addEventListener('submit', (e) => {
+  const searchString = (e.target.value)
+  const filteredProducts = conArr.filter(product => {
+    return product.product_type.includes(searchString) || product.brand.includes(searchString) || product.name.includes(searchString)
+  })
+  console.log(filteredProducts)
+})
+
+const getProduct = document.querySelector('.search-btn')
+getProduct.addEventListener('submit', searchProduct)
+
+// Retrieving API Data
 
 let eyeProd = []
 let lipProd = []
@@ -11,9 +27,9 @@ const getOptions = async () => {
   const url = "http://makeup-api.herokuapp.com/api/v1/products.json?product_type"
   try {
     const response = await axios.get(url)
-    const conArr = response.data.slice(0, 465)
+    conArr = response.data.slice(0, 465)
 
-    console.log(conArr)
+    // console.log(conArr)
    
     conArr.forEach((product) => {
       if (product.product_type === "eyebrow" || product.product_type === "eyeliner" || product.product_type === "eyeshadow" || product.product_type === "mascara" ) {
@@ -46,9 +62,9 @@ function eyeOptions(list) {
   const eyeList = list.map((product) => {
   return product.product_type
   })
-  // console.log(eyeList)
+  
   const uniqueEye = eyeList.filter((x, i, a) => a.indexOf(x) === i)
-  // console.log(uniqueEye)
+  
   const eyeCat = document.querySelector('#select-eye')
  uniqueEye.forEach((product) => {
     const eyeProduct = document.createElement('option')
@@ -68,9 +84,9 @@ function lipOptions(list) {
   const lipList = list.map((product) => {
   return product.product_type
   })
-  // console.log(eyeList)
+  
   const uniqueLip = lipList.filter((x, i, a) => a.indexOf(x) === i)
-  // console.log(uniqueEye)
+  
   const lipCat = document.querySelector('#select-lip')
  uniqueLip.forEach((product) => {
     const lipProduct = document.createElement('option')
@@ -88,9 +104,9 @@ function faceOptions(list) {
   const faceList = list.map((product) => {
   return product.product_type
   })
-  // console.log(eyeList)
+  
   const uniqueFace = faceList.filter((x, i, a) => a.indexOf(x) === i)
-  // console.log(uniqueEye)
+  
   const faceCat = document.querySelector('#select-face')
  uniqueFace.forEach((product) => {
     const faceProduct = document.createElement('option')
@@ -176,7 +192,7 @@ const eyeRenderList = (data) => {
     eyeProdImg.src = l.image_link
     eyeBrand.textContent = l.brand
     eyeProdName.textContent = trimSentence(l.name)
-    eyeProdPrice.textContent = `$ ${l.price}`
+    eyeProdPrice.textContent = `$${l.price}0`
   
 // append elements
       prodCard.appendChild(eyeProdImg)
@@ -216,7 +232,7 @@ const lipRenderList = (data) => {
     lipProdImg.src = l.image_link
     lipBrand.textContent = l.brand
     lipProdName.textContent = trimSentence(l.name)
-    lipProdPrice.textContent = `$ ${l.price}`
+    lipProdPrice.textContent = `$${l.price}0`
   
 // append elements
       prodCard.appendChild(lipProdImg)
@@ -256,7 +272,7 @@ const faceRenderList = (data) => {
     faceProdImg.src = l.image_link
     faceBrand.textContent = l.brand
     faceProdName.textContent = trimSentence(l.name)
-    faceProdPrice.textContent = `$ ${l.price}`
+    faceProdPrice.textContent = `$${l.price}0`
   
 // append elements
       prodCard.appendChild(faceProdImg)
@@ -285,9 +301,21 @@ function removeProduct() {
 
 // Trim Sentence function for product name
 function trimSentence(string) {
-  if (string.length > 30) {
+  if (string.length > 25) {
     return `${string.substring(0, 20)}...`
   } else {
     return string
   }
 }
+
+// Navigation Hamburger
+
+// function hamNav() {
+//   getLinks = document.getElementById('nav-heading');
+//   if (getLinks.style.display === "block") {
+//     getLinks.style.display = "none";
+//   } else {
+//     getLinks.style.display ="block"
+//   }
+// }
+function hamNav()

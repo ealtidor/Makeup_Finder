@@ -116,6 +116,9 @@ p{
    border: 0.1rem solid lightgray;
    margin: 1rem;
  }
+.icon{
+  position: relative
+}
 
 @media only screen and (max-width: 660px) {
  .product-grouping{
@@ -130,5 +133,13 @@ p{
 #select-face{
   margin: 0.5rem -3rem 0.5rem -3rem
   }
-}
+  
+  .sub-header #nav-heading{
+    display: none;
+  }
 
+  #search {
+    margin: auto;
+
+  }
+}
