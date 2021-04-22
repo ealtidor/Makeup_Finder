@@ -1,3 +1,4 @@
+
 .main-header {
   background-color: mistyrose;
   text-align: center;
@@ -13,6 +14,7 @@ nav {
   color: white;
   display: flex;
   justify-content: space-between;
+  flex-flow: row wrap;
 }
 
 a {
@@ -48,13 +50,14 @@ h2 {
 .product-grouping {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 footer{
   display: flex;
   align-items: flex-end;
   background-color: black;
-  margin: 5px;
+  margin: 0.5rem;
 }
 
 p{
@@ -69,19 +72,19 @@ p{
 #select-face{
   background-color: mistyrose;
   color:black;
-  padding: 16px;
-  font-size: 16px;
+  padding: 1.0rem;
+  font-size: 1.0rem;;
   border: none;
   cursor: pointer;
-  width: 200px
+  width: 14rem;
 }
 
 .eye-image,
 .lip-image,
 .face-image{
-  height: 150px;
-  padding: 20px;
-  width: 121px;
+  height: 10rem;
+  width: 9rem;
+  padding: 1rem;
   object-fit: cover;
  }
 
@@ -89,12 +92,14 @@ p{
  .lip-name,
  .face-name {
    color: black;
+   display: inherit;
  }
 
  .eye-price,
  .lip-price,
  .face-price {
    color: black;
+   display: inherit;
  }
 
  .product-container {
@@ -106,8 +111,24 @@ p{
  }
 
  .product-card{
-   padding: 20px;
+  padding: 1rem;
+   text-align: center;
+   border: 0.1rem solid lightgray;
+   margin: 1rem;
  }
 
+@media only screen and (max-width: 660px) {
+ .product-grouping{
 
+  width: 33.333%;
+  padding: 0 2% 1.25rem;
+  margin: auto;
+  justify-content: normal; 
+  }
+#select-eye,
+#select-lip,
+#select-face{
+  margin: 0.5rem -3rem 0.5rem -3rem
+  }
+}
 
