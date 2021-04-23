@@ -69,19 +69,21 @@ https://whimsical.com/the-perfect-look-37VHjqGnQG5ycd4aRB7poY@2Ux7TurymNXDuGzK85
 - Allow user to remove items from favorites
 - Create a display showing that the page is still loading
 - Remove products that do not have an image
+- Display product type name above product cards
+- Divide page by section by displaying product type name when selecting category from navigation bar
 
 ## Project Schedule
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|April 16-18| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|April 19| Project Approval | Incomplete
-|April 20| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|April 20| Pseudocode / actual code | Incomplete
-|April 21| Initial Clickable Model  | Incomplete
-|April 21| Initial Clickable Model / CSS Styling | Incomplete
-|April 22| MVP | Incomplete
-|April 23| Presentations | Incomplete
+|April 16-18| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
+|April 19| Project Approval | Complete
+|April 20| Core Application Structure (HTML, CSS, etc.) | Complete
+|April 20| Pseudocode / actual code | Complete
+|April 21| Initial Clickable Model  | Complete
+|April 21| Initial Clickable Model / CSS Styling | Complete
+|April 22| MVP | Complete
+|April 23| Presentations | Complete
 
 ## Priority Matrix
 
