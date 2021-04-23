@@ -31,7 +31,9 @@ const getOptions = async () => {
   try {
     const response = await axios.get(url)
     conArr = [...response.data]
-    ConArr = conArr.map((a) => {
+
+    // Removes underscore from lip_liner
+    conArr = conArr.map((a) => {
       if (a.product_type === "lip_liner") {
         a.product_type = a.product_type.replace(/_/g, " ") 
       }
@@ -251,3 +253,28 @@ function trimSentence(string) {
   }
 }
 
+
+// Navigation Bar Reference Link
+/*
+WRite a function that creates ability to click Nav elements
+grab value of each individual click
+select appropriate array based on user selection
+remove previous selection
+render selection
+*/
+
+const navLink = document.querySelectorAll('.nav-link').forEach((link) => {
+  link.addEventListener('click', navSelection)
+})
+
+function navSelection(e) {
+  const linkContent = e.target.textContent
+  removeProduct()
+  if (linkContent === "EYE") {
+    productRenderList(eyeProd)
+  } else if (linkContent === "LIP") {
+    productRenderList(lipProd)
+  } else {
+    productRenderList(faceProd)
+  }
+}
