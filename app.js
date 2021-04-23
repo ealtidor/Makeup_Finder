@@ -27,7 +27,7 @@ let lipProd = []
 let faceProd =[]
 
 const getOptions = async () => {
-  const url = "http://makeup-api.herokuapp.com/api/v1/products.json?product_type"
+  const url = "https://makeup-api.herokuapp.com/api/v1/products.json?product_type"
   try {
     const response = await axios.get(url)
     conArr = [...response.data]
