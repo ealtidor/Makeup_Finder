@@ -1,7 +1,9 @@
 # Project Overview
 
 ## The Perfect Look - Makeup Finder
+Works best in Safari browser:
 
+https://ealtidor.github.io/Makeup_Finder/
 
 ## Project Description
 
