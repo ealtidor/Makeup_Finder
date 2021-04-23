@@ -14,7 +14,7 @@ searchProduct.addEventListener('submit', (e) => {
     return product.product_type?.includes(searchString) || product.brand?.includes(searchString) || product.name?.includes(searchString)
   })
   removeProduct()
-  eyeRenderList(filteredProducts)
+  productRenderList(filteredProducts)
 })
 
 const getProduct = document.querySelector('.search-btn')
