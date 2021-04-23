@@ -210,7 +210,7 @@ const productRenderList = (data) => {
     prodImg.src = l.image_link
     prodBrand.textContent = l.brand
     prodName.textContent = trimSentence(l.name)
-    prodPrice.textContent = `$${l.price}`
+    prodPrice.textContent = `$${l.price}0`
   
 // append elements
       prodCard.appendChild(prodImg)
