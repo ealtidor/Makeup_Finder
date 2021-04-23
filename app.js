@@ -255,13 +255,7 @@ function trimSentence(string) {
 
 
 // Navigation Bar Reference Link
-/*
-Write a function that creates ability to click Nav elements
-grab value of each individual click
-select appropriate array based on user selection
-remove previous selection
-render selection
-*/
+
 
 const navLink = document.querySelectorAll('.nav-link').forEach((link) => {
   link.addEventListener('click', navSelection)
