@@ -31,13 +31,19 @@ const getOptions = async () => {
   try {
     const response = await axios.get(url)
     conArr = [...response.data]
-
+    ConArr = conArr.map((a) => {
+      if (a.product_type === "lip_liner") {
+        a.product_type = a.product_type.replace(/_/g, " ") 
+      }
+      return a
+    } )
+  
 //  Pulls in product type value
    
     conArr.forEach((product) => {
       if (product.product_type === "eyebrow" || product.product_type === "eyeliner" || product.product_type === "eyeshadow" || product.product_type === "mascara" ) {
         eyeProd.push(product)
-      } else if (product.product_type === "lip_liner" || product.product_type === "lipstick" ) {
+      } else if (product.product_type === "lip liner" || product.product_type === "lipstick" ) {
         lipProd.push(product)
       } else if (product.product_type === "bronzer" || product.product_type === "blush" || product.product_type === "foundation") {
         faceProd.push(product)
