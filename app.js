@@ -256,7 +256,7 @@ function trimSentence(string) {
 
 // Navigation Bar Reference Link
 /*
-WRite a function that creates ability to click Nav elements
+Write a function that creates ability to click Nav elements
 grab value of each individual click
 select appropriate array based on user selection
 remove previous selection
